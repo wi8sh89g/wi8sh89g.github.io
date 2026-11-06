@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑料网-黑料网热点合集_黑料网爆料资讯_吃瓜黑料站</title>
+<meta name="description" content="黑料网聚合网络热点爆料与吃瓜内容，按话题分类梳理讨论脉络、时间线与信息来源，帮助读者快速了解事件背景与舆论走向。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a26'/%3E%3Ccircle cx='32' cy='28' r='13' fill='none' stroke='%23ff5a5f' stroke-width='4'/%3E%3Cpath d='M32 41v13' stroke='%23ffb347' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#12181f;
+  --ink-soft:#3d4a58;
+  --paper:#f5f2ec;
+  --card:#fffdf9;
+  --line:#ded7cb;
+  --hot:#e0393e;
+  --hot-soft:#ffe9e5;
+  --amber:#c8862a;
+  --dark:#111a26;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+/* header */
+.site-head{background:var(--dark);color:#f4efe6;position:sticky;top:0;z-index:20;border-bottom:3px solid var(--hot);}
+.head-inner{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:14px 0;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.5px;color:#fff;}
+.brand .mark{width:34px;height:34px;flex:0 0 34px;}
+.nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{padding:6px 11px;border-radius:6px;font-size:14px;color:#cfd6de;transition:.18s;}
+.nav a:hover,.nav a:focus-visible{background:#1e2b3a;color:#fff;}
+
+/* hero */
+.hero{background:
+  radial-gradient(900px 320px at 88% -10%,rgba(224,57,62,.28),transparent 70%),
+  radial-gradient(700px 300px at 0% 110%,rgba(200,134,42,.22),transparent 70%),
+  var(--dark);
+  color:#f4efe6;padding:44px 0 40px;}
+.hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:34px;align-items:center;}
+.kicker{display:inline-block;font-size:12px;letter-spacing:2px;color:#ffb347;border:1px solid rgba(255,179,71,.45);border-radius:999px;padding:3px 12px;margin-bottom:16px;}
+h1{font-size:clamp(28px,4.6vw,44px);line-height:1.22;margin:0 0 16px;font-weight:800;letter-spacing:1px;}
+.hero p.lead{margin:0 0 22px;color:#c9d2dc;font-size:15.5px;max-width:34em;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-block;padding:10px 20px;border-radius:8px;font-size:14.5px;font-weight:700;transition:.18s;border:1px solid transparent;}
+.btn-main{background:var(--hot);color:#fff;}
+.btn-main:hover{background:#c72c31;}
+.btn-ghost{border-color:#41505f;color:#dfe5ec;}
+.btn-ghost:hover{background:#1c2836;}
+.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 18px 14px;}
+.hero-card h2{font-size:14px;margin:0 0 10px;color:#ffb347;letter-spacing:1px;font-weight:700;}
+.hero-card ul{list-style:none;margin:0;padding:0;font-size:13.5px;color:#ccd5df;}
+.hero-card li{display:flex;gap:10px;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.1);}
+.hero-card li:last-child{border-bottom:0;}
+.hero-card .tag{flex:0 0 auto;color:#ff8a8d;font-weight:700;}
+
+/* sections */
+section{padding:48px 0;}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+h2.sec-title{font-size:22px;margin:0;font-weight:800;letter-spacing:.5px;}
+h2.sec-title::before{content:"";display:inline-block;width:6px;height:18px;background:var(--hot);border-radius:2px;margin-right:10px;vertical-align:-2px;}
+.sec-desc{color:var(--ink-soft);font-size:14.5px;margin:0 0 24px;max-width:60em;}
+
+/* filter */
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px;}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink-soft);padding:6px 14px;border-radius:999px;font-size:13.5px;cursor:pointer;transition:.16s;}
+.chip:hover{border-color:var(--hot);color:var(--hot);}
+.chip.on{background:var(--hot);border-color:var(--hot);color:#fff;}
+.search-box{margin-left:auto;display:flex;gap:8px;}
+.search-box input{width:190px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:14px;color:var(--ink);font-family:inherit;}
+.search-box input:focus{outline:2px solid rgba(224,57,62,.35);border-color:var(--hot);}
+.search-box button{padding:8px 16px;border:0;border-radius:8px;background:var(--dark);color:#fff;font-size:14px;cursor:pointer;font-family:inherit;}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 20px 18px;display:flex;flex-direction:column;transition:.18s;}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(17,26,38,.09);border-color:#cfc5b5;}
+.card .cat{font-size:12px;color:var(--hot);font-weight:700;letter-spacing:1px;margin-bottom:8px;}
+.card h3{font-size:17px;margin:0 0 10px;line-height:1.45;font-weight:800;}
+.card p{margin:0 0 14px;font-size:14px;color:var(--ink-soft);flex:1;}
+.card .meta{font-size:12.5px;color:#8b8275;display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding-top:10px;}
+.card .meta span:first-child{color:var(--amber);font-weight:600;}
+.empty{display:none;grid-column:1/-1;padding:34px;text-align:center;color:var(--ink-soft);background:var(--card);border:1px dashed var(--line);border-radius:12px;}
+
+/* feature band */
+.band{background:#eae3d7;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.band-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+.article{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;}
+.article h3{margin:0 0 12px;font-size:18px;font-weight:800;}
+.article p{margin:0 0 12px;font-size:14.5px;color:var(--ink-soft);}
+.article p:last-child{margin-bottom:0;}
+.article .quote{border-left:3px solid var(--hot);padding-left:12px;color:var(--ink);font-size:14px;background:var(--hot-soft);border-radius:0 6px 6px 0;padding:10px 12px;}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s;}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;position:relative;}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:20px;width:28px;height:28px;border-radius:50%;background:var(--hot);color:#fff;font-size:14px;font-weight:800;display:grid;place-items:center;}
+.step h3{margin:10px 0 8px;font-size:16px;font-weight:800;}
+.step p{margin:0;font-size:14px;color:var(--ink-soft);}
+
+/* faq */
+.faq{display:grid;gap:12px;}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;}
+summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary::before{content:"＋";color:var(--hot);font-weight:800;margin-right:8px;}
+details[open] summary::before{content:"－";}
+details p{margin:10px 0 0;font-size:14px;color:var(--ink-soft);}
+
+/* footer */
+footer{background:var(--dark);color:#a9b4c0;padding:34px 0 28px;font-size:13.5px;}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start;}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px;margin-bottom:10px;}
+.foot-brand .mark{width:26px;height:26px;}
+.foot-note{max-width:40em;margin:0;font-size:13px;line-height:1.8;}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap;}
+.foot-links a{color:#cfd6de;}
+.foot-links a:hover{color:#fff;}
+.copyright{margin-top:22px;padding-top:16px;border-top:1px solid #22303f;font-size:12.5px;color:#7d8996;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .cards{grid-template-columns:repeat(2,1fr);}
+  .band-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;}
+}
+@media (max-width:620px){
+  body{font-size:15.5px;}
+  .hero{padding:32px 0 30px;}
+  .nav{margin-left:0;width:100%;}
+  .nav a{padding:6px 9px;font-size:13px;}
+  .cards{grid-template-columns:1fr;}
+  .search-box{margin-left:0;width:100%;}
+  .search-box input{flex:1;width:auto;}
+  section{padding:36px 0;}
+  .article{padding:18px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1c2836"/>
+        <circle cx="32" cy="27" r="13" fill="none" stroke="#ff5a5f" stroke-width="4"/>
+        <path d="M32 40v14" stroke="#ffb347" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span>黑料网</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#topics">热点合集</a>
+      <a href="#digest">爆料速览</a>
+      <a href="#reading">吃瓜读法</a>
+      <a href="#faq">常见问答</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">网络热点 · 吃瓜视角</span>
+        <h1>黑料网</h1>
+        <p class="lead">黑料网把散落在各平台的爆料与讨论收拢成一条可读的线：谁在说、说了什么、时间怎么走、哪些说法还缺证据。这里不替事件下结论，只把可核对的部分摆清楚，方便你判断哪些是事实、哪些只是传闻。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#topics">进入热点合集</a>
+          <a class="btn btn-ghost" href="#reading">先看怎么读</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="今日看点">
+        <h2>今日看点</h2>
+        <ul>
+          <li><span class="tag">热</span><span>某综艺剪辑争议，双方各发声明，时间线待补</span></li>
+          <li><span class="tag">新</span><span>品牌代言变动传闻，官方渠道暂无回应</span></li>
+          <li><span class="tag">疑</span><span>网传聊天截图，来源未明，暂不列入结论</span></li>
+          <li><span class="tag">清</span><span>旧料辟谣：三张图系拼接，原图已找到</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">热点合集</h2>
+      </div>
+      <p class="sec-desc">按话题归拢黑料网近期的吃瓜条目。每条都标注了爆料状态：已回应、待核实、已辟谣。用下面的分类按钮筛一筛，或者直接搜关键词。</p>
+
+      <div class="toolbar">
+        <button class="chip on" data-cat="all" type="button">全部</button>
+        <button class="chip" data-cat="娱乐" type="button">娱乐</button>
+        <button class="chip" data-cat="品牌" type="button">品牌</button>
+        <button class="chip" data-cat="网络" type="button">网络</button>
+        <div class="search-box">
+          <input id="q" type="search" placeholder="搜索标题或关键词" aria-label="搜索热点条目">
+          <button id="go" type="button">搜索</button>
+        </div>
+      </div>
+
+      <div class="cards" id="list">
+        <article class="card" data-cat="娱乐">
+          <div class="cat">娱乐 · 已回应</div>
+          <h3>综艺剪辑争议双方各发声明</h3>
+          <p>节目组称剪辑为时长所限，嘉宾方则指片段顺序造成误解。黑料网梳理了两版声明的发布时间与核心表述差异。</p>
+          <div class="meta"><span>爆料状态：双方回应</span><span>讨论热度 高</span></div>
+        </article>
+        <article class="card" data-cat="品牌">
+          <div class="cat">品牌 · 待核实</div>
+          <h3>代言变动传闻仍无官方说法</h3>
+          <p>传闻源于一张未署名的合作截图，品牌与艺人工作室均未发布说明。目前只能确认旧合约曾公开，其余说法无来源。</p>
+          <div class="meta"><span>爆料状态：待核实</span><span>讨论热度 中</span></div>
+        </article>
+        <article class="card" data-cat="网络">
+          <div class="cat">网络 · 已辟谣</div>
+          <h3>拼接截图事件原图已找到</h3>
+          <p>三张流传甚广的聊天图被指拼接，原图出自两年前的公开帖。黑料网记录了比对过程，并标注了可复核的图源链接位置。</p>
+          <div class="meta"><span>爆料状态：已辟谣</span><span>讨论热度 中</span></div>
+        </article>
+        <article class="card" data-cat="娱乐">
+          <div class="cat">娱乐 · 待核实</div>
+          <h3>剧组换角说法缺少通告佐证</h3>
+          <p>讨论集中在两份未盖章的行程表上，剧组官方账号未提及人员调整。读者可先看已公开的拍摄周期，再判断传闻合理性。</p>
+          <div class="meta"><span>爆料状态：待核实</span><span>讨论热度 高</span></div>
+        </article>
+        <article class="card" data-cat="品牌">
+          <div class="cat">品牌 · 已回应</div>
+          <h3>产品宣传语被指夸大，品牌致歉</h3>
+          <p>品牌在官方渠道发布说明并调整文案，承认表述不够严谨。黑料网对照了原海报与新文案的改动点，逐条列出。</p>
+          <div class="meta"><span>爆料状态：品牌致歉</span><span>讨论热度 中</span></div>
+        </article>
+        <article class="card" data-cat="网络">
+          <div class="cat">网络 · 已回应</div>
+          <h3>旧账号言论被翻出，本人回应</h3>
+          <p>当事人确认账号归属，说明当时语境并致歉。讨论焦点转向早年网络表达与当下标准的差异，黑料网保留了双方原话。</p>
+          <div class="meta"><span>爆料状态：本人回应</span><span>讨论热度 高</span></div>
+        </article>
+        <div class="empty" id="empty">没有匹配的条目，换个词试试，或点“全部”看回完整列表。</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="digest" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">爆料速览</h2>
+      </div>
+      <p class="sec-desc">黑料网的编辑习惯是先分清楚三件事：谁说、说什么、凭什么。下面两篇速览展示这种拆法，读其他条目时可以照搬。</p>
+      <div class="band-grid">
+        <article class="article">
+          <h3>一条爆料从出现到定性的四个节点</h3>
+          <p>多数吃瓜事件会经过四个节点：原始帖出现、平台扩散、当事方回应、证据补全或推翻。黑料网在每个条目里尽量标出当前停在哪个节点。</p>
+          <p>停在“扩散”阶段的说法最不可靠，因为此时传播量最大、可核对材料最少。读者若看到只有转发、没有原始出处的描述，宜先按传闻处理。</p>
+          <div class="quote">判断口诀：先找原始出处，再看有没有当事方回应，最后看证据能不能独立复核。</div>
+        </article>
+        <article class="article">
+          <h3>截图、录音、行程表：证据强弱不一样</h3>
+          <p>截图容易被裁切和拼接，单个截图的信息量有限；录音要看是否完整、有无剪辑痕迹；行程表类文件若没有盖章或官方发布，只能算线索。</p>
+          <p>黑料网在标注爆料状态时，会把“仅截图”“仅匿名帖”的说法放低一档，把“当事方公开声明”放高一档。这样做的目的不是判案，而是让你知道该信到什么程度。</p>
+          <p>如果多个独立来源指向同一事实，可信度会上升；如果所有来源都能追溯回同一个帖子，那其实只有一个来源。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="reading">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">吃瓜读法</h2>
+      </div>
+      <p class="sec-desc">在黑料网翻条目，按这三步走，能少被带节奏。</p>
+      <div class="steps">
+        <div class="step">
+          <h3>先看状态标签</h3>
+          <p>已回应、待核实、已辟谣三种标签决定了这条内容能信几分。待核实不等于假，但意味着关键环节还缺材料。</p>
+        </div>
+        <div class="step">
+          <h3>再看时间顺序</h3>
+          <p>爆料时间、回应时间、辟谣时间的先后，常常比内容本身更能说明问题。先发的说法未必是原版，后到的回应也未必覆盖全部疑问。</p>
+        </div>
+        <div class="step">
+          <h3>最后看缺口</h3>
+          <p>问一句“还缺什么”。缺原始出处、缺当事方回应、缺第三方佐证，都是明确的信息缺口，补上之前不宜下结论。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">常见问答</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>黑料网的内容都是真的吗？</summary>
+          <p>不是。黑料网收录的是网络讨论与爆料，每条都标注了爆料状态。标为“待核实”的条目说明关键材料尚缺，标为“已辟谣”的则已有反证。请按标签判断可信程度。</p>
+        </details>
+        <details>
+          <summary>为什么有些条目只有几句话？</summary>
+          <p>因为可核对的信息就这么多。与其补写推测，不如把已知部分写清楚，并明确标出缺口，方便你后续自己跟进。</p>
+        </details>
+        <details>
+          <summary>条目里的“讨论热度”怎么理解？</summary>
+          <p>它只表示该话题在公开平台上被提及的密集程度，不代表内容真假，也不代表结论轻重。热度高的传闻同样可能是错的。</p>
+        </details>
+        <details>
+          <summary>发现条目信息有误怎么办？</summary>
+          <p>可对照条目中列出的公开来源自行核对。若原始出处已更新或删除，条目状态也应随之调整，这类情况在热点事件中很常见。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1c2836"/>
+            <circle cx="32" cy="27" r="13" fill="none" stroke="#ff5a5f" stroke-width="4"/>
+            <path d="M32 40v14" stroke="#ffb347" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <span>黑料网</span>
+        </div>
+        <p class="foot-note">黑料网聚合公开可见的网络热点与爆料讨论，按话题整理脉络并标注爆料状态。页面内容为信息汇编，不构成对任何个人或机构的定性判断。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#topics">热点合集</a>
+        <a href="#digest">爆料速览</a>
+        <a href="#reading">吃瓜读法</a>
+        <a href="#faq">常见问答</a>
+      </div>
+    </div>
+    <div class="copyright">黑料网 · 热点内容汇编 · 请理性吃瓜，以公开来源为准</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip');
+  var cards=Array.prototype.slice.call(document.querySelectorAll('#list .card'));
+  var empty=document.getElementById('empty');
+  var q=document.getElementById('q');
+  var go=document.getElementById('go');
+  var curCat='all';
+
+  function apply(){
+    var kw=(q.value||'').trim().toLowerCase();
+    var shown=0;
+    cards.forEach(function(c){
+      var okCat=(curCat==='all'||c.getAttribute('data-cat')===curCat);
+      var text=c.textContent.toLowerCase();
+      var okKw=!kw||text.indexOf(kw)>-1;
+      var ok=okCat&&okKw;
+      c.style.display=ok?'':'none';
+      if(ok)shown++;
+    });
+    empty.style.display=shown?'none':'block';
+  }
+
+  chips.forEach(function(b){
+    b.addEventListener('click',function(){
+      chips.forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      curCat=b.getAttribute('data-cat');
+      apply();
+    });
+  });
+  go.addEventListener('click',apply);
+  q.addEventListener('input',apply);
+  q.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();apply();}});
+})();
+</script>
+</body>
+</html>
