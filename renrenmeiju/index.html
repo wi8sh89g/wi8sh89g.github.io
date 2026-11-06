@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人人美剧-美剧在线观看_美剧剧集推荐与追剧动态</title>
+<meta name="description" content="人人美剧是美剧爱好者浏览剧集动态、在线观看入口与追剧推荐的主题首页，汇集热门美剧、新剧开播信息与经典剧集线索，帮助观众快速找到想看的剧。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e1726'/%3E%3Crect x='12' y='22' width='34' height='24' rx='4' fill='none' stroke='%23f2b544' stroke-width='3'/%3E%3Cpath d='M46 28l8-5v18l-8-5z' fill='%23f2b544'/%3E%3Ccircle cx='29' cy='34' r='5' fill='%23f2b544'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0e1726;
+  --ink-2:#1b2740;
+  --paper:#f6f4ef;
+  --card:#ffffff;
+  --gold:#f2b544;
+  --gold-deep:#c98a12;
+  --line:#e3ded4;
+  --text:#23293a;
+  --muted:#6b7280;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--text);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* 页头 */
+header.site{
+  background:var(--ink);
+  color:#f5f2ea;
+  border-bottom:3px solid var(--gold);
+  position:sticky;top:0;z-index:50;
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.5px}
+.logo .mark{
+  width:38px;height:38px;border-radius:10px;background:var(--ink-2);
+  display:grid;place-items:center;border:1.5px solid rgba(242,181,68,.55);flex:0 0 auto;
+}
+.logo span.brand{color:#fff}
+nav.links{display:flex;gap:6px;flex-wrap:wrap}
+nav.links a{
+  padding:7px 13px;border-radius:999px;font-size:14.5px;color:#d6dae4;
+  transition:.2s;
+}
+nav.links a:hover,nav.links a:focus-visible{background:rgba(242,181,68,.16);color:var(--gold);outline:none}
+nav.links a.cta{background:var(--gold);color:#241a03;font-weight:700}
+nav.links a.cta:hover{background:#ffcb63;color:#241a03}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(900px 340px at 82% -10%,rgba(242,181,68,.18),transparent 70%),
+    linear-gradient(160deg,#0e1726 0%,#16223a 55%,#1d2b47 100%);
+  color:#f3f1ea;padding:58px 0 64px;
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:2px;
+  color:var(--gold);border:1px solid rgba(242,181,68,.4);border-radius:999px;
+  padding:5px 14px;margin-bottom:20px;
+}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.2;font-weight:800;letter-spacing:1px}
+.hero p.lead{margin-top:18px;color:#c8cfdb;max-width:34em;font-size:16.5px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:10px;
+  font-size:15px;font-weight:700;transition:.2s;border:1px solid transparent;
+}
+.btn-gold{background:var(--gold);color:#241a03}
+.btn-gold:hover{background:#ffcb63}
+.btn-ghost{border-color:rgba(255,255,255,.28);color:#eef1f6}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn[aria-disabled="true"]{pointer-events:none;opacity:.75}
+.hero-note{margin-top:22px;font-size:13.5px;color:#93a0b5}
+
+.hero-visual{position:relative}
+.screen{
+  background:#0a1120;border:1px solid rgba(242,181,68,.28);border-radius:18px;
+  padding:18px;box-shadow:0 24px 60px rgba(0,0,0,.45);
+}
+.screen .bar{display:flex;gap:6px;margin-bottom:14px}
+.screen .bar i{width:9px;height:9px;border-radius:50%;background:#33405a;display:block}
+.screen .bar i:first-child{background:var(--gold)}
+.screen .row{display:flex;gap:10px;margin-bottom:10px}
+.poster{
+  flex:1;height:58px;border-radius:8px;
+  background:linear-gradient(135deg,#22304d,#111a2c);
+  border:1px solid rgba(255,255,255,.06);
+}
+.poster.g{background:linear-gradient(135deg,rgba(242,181,68,.42),#1a2439)}
+.screen .line{height:8px;border-radius:4px;background:#25314a;margin-bottom:8px}
+.screen .line.s{width:62%}
+.screen .line.m{width:84%}
+
+/* 通用分区 */
+section{padding:62px 0}
+.sec-head{margin-bottom:32px;max-width:44em}
+.sec-head .kicker{
+  font-size:12.5px;letter-spacing:2.5px;color:var(--gold-deep);font-weight:700;
+  text-transform:uppercase;display:block;margin-bottom:10px;
+}
+h2{font-size:clamp(22px,2.8vw,29px);font-weight:800;color:var(--ink);line-height:1.35}
+.sec-head p{margin-top:12px;color:var(--muted);font-size:15.5px}
+
+/* 追剧动态 */
+.dyn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dyn{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 22px 24px;position:relative;transition:.22s;
+}
+.dyn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(14,23,38,.09)}
+.dyn .tag{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;
+  color:var(--gold-deep);background:rgba(242,181,68,.14);border-radius:6px;
+  padding:3px 9px;margin-bottom:14px;
+}
+.dyn h3{font-size:17.5px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.dyn p{font-size:14.5px;color:#4b5468}
+.dyn .meta{margin-top:14px;font-size:12.5px;color:#9aa1b1}
+
+/* 剧集推荐 */
+.rec-wrap{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.rec{
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  background:var(--paper);display:flex;flex-direction:column;transition:.22s;
+}
+.rec:hover{border-color:rgba(201,138,18,.55);box-shadow:0 12px 26px rgba(14,23,38,.08)}
+.rec .thumb{
+  height:96px;display:grid;place-items:center;
+  background:linear-gradient(140deg,#1b2740,#0e1726);
+  color:var(--gold);font-weight:800;font-size:26px;letter-spacing:1px;
+}
+.rec:nth-child(2) .thumb{background:linear-gradient(140deg,#2a3a2e,#14201a)}
+.rec:nth-child(3) .thumb{background:linear-gradient(140deg,#3a2733,#1d131b)}
+.rec:nth-child(4) .thumb{background:linear-gradient(140deg,#26364a,#121c28)}
+.rec .body{padding:16px 16px 18px;flex:1;display:flex;flex-direction:column}
+.rec h3{font-size:15.5px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.rec p{font-size:13.5px;color:#5b6376;flex:1}
+.rec .foot{
+  margin-top:14px;font-size:12.5px;color:var(--gold-deep);font-weight:700;
+  display:flex;align-items:center;gap:6px;
+}
+
+/* 观看路径 */
+.path{background:var(--ink);color:#eceef3}
+.path h2{color:#fff}
+.path .sec-head p{color:#a7b0c1}
+.path .sec-head .kicker{color:var(--gold)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
+.step{
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);
+  border-radius:var(--radius);padding:26px 22px;position:relative;
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:13px;font-weight:800;letter-spacing:2px;color:var(--gold);
+  display:block;margin-bottom:12px;
+}
+.step h3{font-size:16.5px;color:#fff;margin-bottom:8px}
+.step p{font-size:14px;color:#a7b0c1}
+
+/* 常见问答 */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px}
+.qa{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+.qa h3{font-size:15.5px;color:var(--ink);font-weight:800;margin-bottom:8px}
+.qa p{font-size:14.5px;color:#4b5468}
+
+/* 订阅条 */
+.subscribe{
+  background:linear-gradient(120deg,#fdf6e6,#f6f0e2);
+  border:1px solid #eadfc4;border-radius:18px;padding:34px;
+  display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;
+}
+.subscribe h2{font-size:22px}
+.subscribe p{color:#6a6047;font-size:14.5px;margin-top:8px;max-width:38em}
+.sub-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#22304d}
+.btn-line{border-color:#c9b98f;color:#6a5a2f}
+.btn-line:hover{border-color:var(--gold-deep);color:var(--gold-deep)}
+
+/* 页尾 */
+footer.site{background:#0b1220;color:#98a3b6;padding:44px 0 34px;font-size:14px}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.foot-brand{max-width:30em}
+.foot-brand .logo{font-size:17px;margin-bottom:12px}
+.foot-brand p{font-size:13.5px;line-height:1.85;color:#8892a5}
+.foot-cols{display:flex;gap:56px;flex-wrap:wrap}
+.foot-cols h4{color:#e5e9f1;font-size:14px;margin-bottom:12px;letter-spacing:.5px}
+.foot-cols ul{list-style:none;display:grid;gap:8px;font-size:13.5px}
+.foot-cols a:hover{color:var(--gold)}
+.foot-bottom{
+  margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#6f7a8d;
+}
+
+/* 响应式 */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-visual{max-width:420px}
+  .dyn-grid{grid-template-columns:1fr 1fr}
+  .rec-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .faq{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  body{font-size:15.5px}
+  section{padding:44px 0}
+  .hero{padding:40px 0 46px}
+  .nav{padding:12px 0}
+  nav.links a{padding:6px 10px;font-size:13.5px}
+  .dyn-grid{grid-template-columns:1fr}
+  .rec-grid{grid-template-columns:1fr}
+  .subscribe{padding:24px}
+  .foot-cols{gap:32px}
+  .hero-actions .btn{flex:1;justify-content:center}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="logo">
+      <span class="mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <rect x="2.5" y="6.5" width="13" height="11" rx="2" stroke="#f2b544" stroke-width="1.7"/>
+          <path d="M15.5 10.5l6-3.2v9.4l-6-3.2z" fill="#f2b544"/>
+        </svg>
+      </span>
+      <span class="brand">人人美剧</span>
+    </div>
+    <nav class="links" aria-label="主导航">
+      <a href="#dynamics">追剧动态</a>
+      <a href="#picks">剧集推荐</a>
+      <a href="#how">观看路径</a>
+      <a href="#faq">常见问题</a>
+      <a class="cta" href="#picks">开始追剧</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">美剧 · 剧集 · 追剧</span>
+        <h1>人人美剧</h1>
+        <p class="lead">人人美剧是为美剧观众准备的主题首页：把新剧动向、热门剧集线索和追剧路径放在一起，让你少绕路，直接找到下一部想看的剧。</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#picks">查看剧集推荐</a>
+          <a class="btn btn-ghost" href="#dynamics">浏览追剧动态</a>
+        </div>
+        <p class="hero-note">剧集与动态信息按季更新，具体片源与上线情况以实际平台为准。</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="screen">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="row"><span class="poster g"></span><span class="poster"></span></div>
+          <div class="line"></div>
+          <div class="line s"></div>
+          <div class="row" style="margin-top:14px"><span class="poster"></span><span class="poster g"></span></div>
+          <div class="line m"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dynamics">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">追剧动态</span>
+        <h2>最近值得留意的美剧动向</h2>
+        <p>人人美剧把观众最关心的几类信号分开呈现：新剧定档、老剧续订、季终与回归。每条只讲清楚一件事，方便你判断要不要跟进。</p>
+      </div>
+      <div class="dyn-grid">
+        <article class="dyn">
+          <span class="tag">新剧开播</span>
+          <h3>秋季新剧集中上线</h3>
+          <p>每年秋季是美剧新剧最密集的窗口，公共台与流媒体都会在这一阶段放出重点剧集。关注开播时间比关注宣传物料更实用。</p>
+          <div class="meta">适合：想找新剧入门的观众</div>
+        </article>
+        <article class="dyn">
+          <span class="tag">续订与取消</span>
+          <h3>续订消息决定追剧成本</h3>
+          <p>一部剧被续订，意味着后续剧情还有展开空间；被取消则可能留下未收尾的故事线。追剧前先确认续订状态，能减少中途落空。</p>
+          <div class="meta">适合：担心烂尾的观众</div>
+        </article>
+        <article class="dyn">
+          <span class="tag">季终与回归</span>
+          <h3>季终之后是漫长的等待</h3>
+          <p>美剧常以季为单位推进，季终到下一季回归往往间隔数月。把季终当作阶段性收尾来安排观看节奏，体验会更完整。</p>
+          <div class="meta">适合：按季补剧的观众</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rec-wrap" id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">剧集推荐</span>
+        <h2>按类型挑一部人人美剧值得看的剧</h2>
+        <p>不同观众的入口不一样：有人从悬疑入坑，有人偏爱轻松喜剧，也有人只看口碑长线剧。下面按类型给出方向，便于对号入座。</p>
+      </div>
+      <div class="rec-grid">
+        <article class="rec">
+          <div class="thumb" aria-hidden="true">悬</div>
+          <div class="body">
+            <h3>悬疑推理</h3>
+            <p>线索密集、节奏偏快，适合一次连看多集。选择时优先看单集时长与季数，避免入坑后发现体量过大。</p>
+            <div class="foot">适合连看</div>
+          </div>
+        </article>
+        <article class="rec">
+          <div class="thumb" aria-hidden="true">喜</div>
+          <div class="body">
+            <h3>轻松喜剧</h3>
+            <p>单集短、负担轻，适合碎片时间。喜剧类美剧常以人物关系撑起长线，从第一季顺着看更容易进入状态。</p>
+            <div class="foot">适合碎片时间</div>
+          </div>
+        </article>
+        <article class="rec">
+          <div class="thumb" aria-hidden="true">剧</div>
+          <div class="body">
+            <h3>剧情长线</h3>
+            <p>人物成长与群像关系是核心看点，前几集铺垫较多。建议先看完首季再判断是否继续，避免过早放弃。</p>
+            <div class="foot">适合慢看</div>
+          </div>
+        </article>
+        <article class="rec">
+          <div class="thumb" aria-hidden="true">经</div>
+          <div class="body">
+            <h3>经典补课</h3>
+            <p>口碑沉淀多年的老剧，故事完整、讨论基础广。补经典时可以按季推进，不必追求一次看完。</p>
+            <div class="foot">适合补齐片单</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="path" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">观看路径</span>
+        <h2>在人人美剧规划一次完整的追剧</h2>
+        <p>追剧不是点开就完，先定类型、再确认状态、最后安排节奏，三步就能把一部剧看得更顺。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>先定类型与体量</h3>
+          <p>明确自己想看悬疑、喜剧还是长线剧情，再看季数与单集时长，判断能否在可支配时间内看完。</p>
+        </div>
+        <div class="step">
+          <h3>确认播出状态</h3>
+          <p>区分已完结、连载中与待续订三种状态。连载中的剧要预留等待时间，已完结的剧则可以一次安排到底。</p>
+        </div>
+        <div class="step">
+          <h3>安排观看节奏</h3>
+          <p>按季分段推进，每季结束稍作停顿再继续。这样既能保持新鲜感，也便于随时调整片单。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">常见问题</span>
+        <h2>关于人人美剧与追剧的疑问</h2>
+        <p>把观众最常问的几点集中回答，减少在找剧过程中的反复确认。</p>
+      </div>
+      <div class="faq">
+        <div class="qa">
+          <h3>人人美剧适合什么阶段的观众？</h3>
+          <p>刚接触美剧的新观众可以从类型推荐入手，先看单季体量较小的剧；长期追剧的观众更适合关注续订与季终动态，及时调整片单。</p>
+        </div>
+        <div class="qa">
+          <h3>为什么先看续订状态再决定追剧？</h3>
+          <p>续订状态直接关系到故事是否还有后续。提前了解能避免投入大量时间后遇到突然取消，也能让等待期更有预期。</p>
+        </div>
+        <div class="qa">
+          <h3>新剧和经典老剧怎么选？</h3>
+          <p>新剧胜在讨论热度与新鲜感，老剧胜在故事完整、口碑稳定。时间有限时可以先补一部经典，再跟进当季新剧。</p>
+        </div>
+        <div class="qa">
+          <h3>季终后需要立刻看下一季吗？</h3>
+          <p>不必。美剧两季之间常有空档，按自己的节奏回看或补剧更从容。把季终当作一次小结，再决定是否继续更合适。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="subscribe">
+        <div>
+          <h2>把人人美剧加入你的追剧入口</h2>
+          <p>收藏本页，下次打开即可回到剧集推荐与追剧动态。页面内容围绕美剧观看需求组织，不涉及与主题无关的信息。</p>
+        </div>
+        <div class="sub-actions">
+          <a class="btn btn-dark" href="#picks">回到剧集推荐</a>
+          <a class="btn btn-line" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">
+          <span class="mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <rect x="2.5" y="6.5" width="13" height="11" rx="2" stroke="#f2b544" stroke-width="1.7"/>
+              <path d="M15.5 10.5l6-3.2v9.4l-6-3.2z" fill="#f2b544"/>
+            </svg>
+          </span>
+          <span class="brand">人人美剧</span>
+        </div>
+        <p>人人美剧是一个面向美剧观众的主题首页，提供剧集推荐、追剧动态与观看路径参考。剧集信息随播出状态变化，具体上线与片源以实际平台为准。</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>内容</h4>
+          <ul>
+            <li><a href="#dynamics">追剧动态</a></li>
+            <li><a href="#picks">剧集推荐</a></li>
+            <li><a href="#how">观看路径</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>类型</h4>
+          <ul>
+            <li><a href="#picks">悬疑推理</a></li>
+            <li><a href="#picks">轻松喜剧</a></li>
+            <li><a href="#picks">剧情长线</a></li>
+            <li><a href="#picks">经典补课</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 人人美剧 · 美剧主题首页</span>
+      <span>剧集动态与推荐仅作观看参考</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
