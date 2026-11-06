@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91大赛吃瓜爆料-热门瓜点爆料汇总_吃瓜大赛热点_网友爆料合集</title>
+<meta name="description" content="91大赛吃瓜爆料首页，汇集热门瓜点爆料与网友讨论，按热度梳理吃瓜大赛相关热点内容，方便快速浏览与查看最新爆料合集。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161a24'/%3E%3Cpath d='M32 12c3 8 8 12 16 14-8 2-13 6-16 14-3-8-8-12-16-14 8-2 13-6 16-14z' fill='%23ff5a5f'/%3E%3Ccircle cx='32' cy='48' r='6' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#161a24;
+    --ink-soft:#2b3242;
+    --paper:#f6f4ef;
+    --card:#ffffff;
+    --line:#e3dfd6;
+    --accent:#e8483f;
+    --accent-deep:#b62f28;
+    --gold:#f2b23c;
+    --muted:#6d6a63;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{width:min(1120px,92vw);margin:0 auto}
+
+  /* 头部 */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(22,26,36,.96);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .bar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:12px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;color:#fff}
+  .brand .mark{width:36px;height:36px;flex:0 0 auto}
+  .brand .name{font-size:18px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+  nav.main{display:flex;gap:6px;flex-wrap:wrap}
+  nav.main a{
+    color:#cfd3dd;font-size:14px;padding:7px 12px;border-radius:999px;
+    transition:.2s;
+  }
+  nav.main a:hover{background:rgba(255,255,255,.1);color:#fff}
+  .nav-toggle{
+    display:none;background:none;border:1px solid rgba(255,255,255,.25);
+    color:#fff;border-radius:8px;padding:6px 10px;font-size:14px;cursor:pointer;
+  }
+
+  /* 首屏 */
+  .hero{
+    background:
+      radial-gradient(700px 320px at 88% -10%,rgba(232,72,63,.28),transparent 70%),
+      linear-gradient(160deg,#161a24 0%,#232a3a 60%,#2d3547 100%);
+    color:#fff;padding:54px 0 60px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-60px;bottom:-80px;width:320px;height:320px;
+    border-radius:50%;border:38px solid rgba(255,255,255,.05);
+  }
+  .hero .inner{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(232,72,63,.16);border:1px solid rgba(232,72,63,.45);
+    color:#ffb4ae;font-size:13px;padding:5px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(232,72,63,.25)}
+  h1{
+    font-size:clamp(28px,4.4vw,46px);line-height:1.22;font-weight:900;
+    letter-spacing:.5px;
+  }
+  h1 .hl{color:var(--gold)}
+  .lede{margin-top:16px;color:#c8cdd8;font-size:16px;max-width:36em}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:999px;font-weight:700;font-size:15px;
+    transition:.2s;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 22px rgba(232,72,63,.35)}
+  .btn-primary:hover{background:var(--accent-deep)}
+  .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  .btn[aria-disabled="true"]{opacity:.65;cursor:not-allowed;pointer-events:none}
+  .hero-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);padding:22px;
+  }
+  .hero-card h3{font-size:15px;color:#ffd9d6;font-weight:700;margin-bottom:12px;letter-spacing:.5px}
+  .hotline{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.13);font-size:14px;color:#dfe3ec}
+  .hotline:last-child{border-bottom:none}
+  .hotline .idx{font-weight:900;color:var(--gold);font-size:13px;min-width:18px}
+
+  /* 通用区块 */
+  section{padding:56px 0}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(21px,2.6vw,27px);font-weight:900;letter-spacing:.3px}
+  .sec-head h2 span{color:var(--accent)}
+  .sec-head p{color:var(--muted);font-size:14px;max-width:40em}
+  .link-more{color:var(--accent);font-weight:700;font-size:14px;white-space:nowrap}
+  .link-more:hover{text-decoration:underline}
+
+  /* 筛选 */
+  .filter-bar{
+    display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:14px 16px;margin-bottom:24px;
+  }
+  .filter-bar input[type=search]{
+    flex:1 1 220px;min-width:0;border:1px solid var(--line);background:#fbfaf7;
+    border-radius:999px;padding:10px 16px;font-size:15px;color:var(--ink);outline:none;
+  }
+  .filter-bar input[type=search]:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(232,72,63,.14)}
+  .chip{
+    border:1px solid var(--line);background:#fff;border-radius:999px;
+    padding:8px 15px;font-size:14px;cursor:pointer;color:var(--ink-soft);transition:.18s;
+  }
+  .chip:hover{border-color:var(--accent);color:var(--accent)}
+  .chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .empty-tip{display:none;color:var(--muted);font-size:14px;padding:8px 2px}
+  .empty-tip.show{display:block}
+
+  /* 卡片网格 */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;transition:.22s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(22,26,36,.09);border-color:#d5cfc2}
+  .card .thumb{position:relative;aspect-ratio:16/9;background:#ece8df;overflow:hidden}
+  .card .thumb svg{width:100%;height:100%}
+  .tag{
+    position:absolute;left:12px;top:12px;background:rgba(22,26,36,.82);color:#fff;
+    font-size:12px;padding:3px 10px;border-radius:999px;letter-spacing:.4px;
+  }
+  .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .card h3{font-size:16.5px;font-weight:800;line-height:1.45}
+  .card p{font-size:14px;color:var(--muted);flex:1}
+  .meta{display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:#8b877e;border-top:1px dashed var(--line);padding-top:10px}
+  .meta .heat{color:var(--accent);font-weight:700}
+
+  /* 深度区 */
+  .deep{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .deep-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start}
+  .deep article h2{font-size:clamp(21px,2.4vw,26px);font-weight:900;margin-bottom:6px}
+  .deep article .sub{color:var(--accent);font-size:13.5px;font-weight:700;letter-spacing:1px;margin-bottom:16px}
+  .deep article p{font-size:15.5px;color:var(--ink-soft);margin-bottom:14px}
+  .deep article p strong{color:var(--ink);font-weight:800}
+  .rules{background:#fbfaf7;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .rules h3{font-size:16px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .rules h3::before{content:"";width:4px;height:16px;background:var(--accent);border-radius:2px}
+  .rules ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .rules li{font-size:14.5px;color:var(--ink-soft);padding-left:22px;position:relative}
+  .rules li::before{
+    content:"";position:absolute;left:0;top:9px;width:9px;height:9px;
+    border-radius:3px;background:var(--gold);
+  }
+  .rules .note{margin-top:16px;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+
+  /* 列表区 */
+  .list-zone{display:grid;grid-template-columns:1.3fr .7fr;gap:36px;align-items:start}
+  .rank-list{display:flex;flex-direction:column;gap:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .rank-item{display:flex;gap:16px;padding:18px 20px;border-bottom:1px solid var(--line);align-items:flex-start;transition:.18s}
+  .rank-item:last-child{border-bottom:none}
+  .rank-item:hover{background:#fbf8f2}
+  .rank-num{
+    font-size:18px;font-weight:900;color:var(--muted);min-width:30px;line-height:1.4;
+  }
+  .rank-item:nth-child(1) .rank-num{color:var(--accent)}
+  .rank-item:nth-child(2) .rank-num{color:var(--gold)}
+  .rank-body h4{font-size:15.5px;font-weight:800;margin-bottom:3px}
+  .rank-body p{font-size:13.5px;color:var(--muted)}
+  .side-box{background:#161a24;color:#fff;border-radius:var(--radius);padding:26px;position:relative;overflow:hidden}
+  .side-box::after{
+    content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;
+    border-radius:50%;background:rgba(242,178,60,.14);
+  }
+  .side-box h3{font-size:17px;font-weight:800;margin-bottom:10px;position:relative;z-index:2}
+  .side-box p{font-size:14px;color:#c3c9d6;margin-bottom:18px;position:relative;z-index:2}
+  .side-box .btn{position:relative;z-index:2;width:100%;justify-content:center}
+
+  /* 常见问答 */
+  .faq .grid{grid-template-columns:repeat(2,1fr)}
+  .qa{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+  .qa h4{font-size:15.5px;font-weight:800;margin-bottom:8px;color:var(--ink)}
+  .qa h4::before{content:"Q ";color:var(--accent);font-weight:900}
+  .qa p{font-size:14.5px;color:var(--muted)}
+
+  /* 页尾 */
+  footer.site{background:#161a24;color:#a9b0be;padding:44px 0 30px;margin-top:20px}
+  .foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:26px}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px}
+  .foot-brand svg{width:30px;height:30px}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap;font-size:14px}
+  .foot-links a:hover{color:#fff}
+  .foot-note{font-size:13px;line-height:1.9;margin-top:20px;color:#8b93a3}
+  .foot-note strong{color:#cfd3dd;font-weight:700}
+
+  @media(max-width:900px){
+    .hero .inner{grid-template-columns:1fr;gap:28px}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .deep-grid,.list-zone{grid-template-columns:1fr;gap:28px}
+    .faq .grid{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .bar{padding:10px 0;flex-wrap:wrap}
+    nav.main{
+      display:none;width:100%;flex-direction:column;gap:2px;padding:8px 0 4px;
+      border-top:1px solid rgba(255,255,255,.1);margin-top:8px;
+    }
+    nav.main.open{display:flex}
+    nav.main a{padding:10px 8px;font-size:15px}
+    .nav-toggle{display:block}
+    .brand .name{font-size:16px}
+    .hero{padding:38px 0 42px}
+    .lede{font-size:15px}
+    .grid{grid-template-columns:1fr}
+    section{padding:40px 0}
+    .filter-bar{padding:12px}
+    .chip{font-size:13px;padding:7px 12px}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="91大赛吃瓜爆料首页">
+      <svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#232a3a"/>
+        <path d="M32 11c3 8 8 12 16 14-8 2-13 6-16 14-3-8-8-12-16-14 8-2 13-6 16-14z" fill="#e8483f"/>
+        <circle cx="32" cy="49" r="6" fill="#f2b23c"/>
+      </svg>
+      <span class="name">91大赛吃瓜爆料</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainnav">导航</button>
+    <nav class="main" id="mainnav" aria-label="主导航">
+      <a href="#hot">热门瓜点</a>
+      <a href="#deep">爆料观察</a>
+      <a href="#rank">热度榜单</a>
+      <a href="#faq">常见疑问</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap inner">
+      <div>
+        <span class="kicker"><span class="dot"></span>吃瓜热点 · 持续更新</span>
+        <h1>91大赛吃瓜爆料</h1>
+        <p class="lede">围绕网络上流传的吃瓜大赛热点，把网友投稿、讨论脉络与热度变化放在一处。看瓜先看来源与热度，再判断真假，这里是 91大赛吃瓜爆料的集中浏览入口。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hot">进入热门瓜点</a>
+          <a class="btn btn-ghost" href="#deep">了解爆料脉络</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="当前热门条目">
+        <h3>此刻热度靠前</h3>
+        <div class="hotline"><span class="idx">01</span><span>网友投稿的瓜点截图在多个群聊流传</span></div>
+        <div class="hotline"><span class="idx">02</span><span>吃瓜大赛相关话题讨论量走高</span></div>
+        <div class="hotline"><span class="idx">03</span><span>旧爆料被重新翻出并重新解读</span></div>
+        <div class="hotline"><span class="idx">04</span><span>多方说法不一，等待进一步说明</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 热门瓜点 -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>热门瓜点 <span>· 正在讨论</span></h2>
+          <p>按网友关注度收录的吃瓜条目，每条都标注来源类型与热度状态，方便你快速判断值不值得跟进。</p>
+        </div>
+        <a class="link-more" href="#rank">查看热度榜单 →</a>
+      </div>
+
+      <div class="filter-bar" role="search">
+        <input type="search" id="guakey" placeholder="搜索瓜点关键词，如：截图、群聊、大赛" aria-label="搜索瓜点关键词">
+        <button class="chip active" type="button" data-cat="all">全部</button>
+        <button class="chip" type="button" data-cat="投稿">投稿爆料</button>
+        <button class="chip" type="button" data-cat="讨论">话题讨论</button>
+        <button class="chip" type="button" data-cat="澄清">后续澄清</button>
+      </div>
+      <p class="empty-tip" id="emptyTip">没有匹配的瓜点，换个关键词试试。</p>
+
+      <div class="grid" id="cardGrid">
+
+        <article class="card" data-cat="投稿" data-key="截图 群聊 流传 投稿">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="320" height="180" fill="#f3e9e3"/>
+              <rect x="60" y="34" width="120" height="86" rx="8" fill="#ffffff" stroke="#e0d4cb"/>
+              <rect x="74" y="50" width="72" height="7" rx="3.5" fill="#e8483f"/>
+              <rect x="74" y="66" width="92" height="6" rx="3" fill="#d9cec5"/>
+              <rect x="74" y="80" width="80" height="6" rx="3" fill="#d9cec5"/>
+              <circle cx="232" cy="120" r="34" fill="#f2b23c" opacity=".85"/>
+              <path d="M218 120l10 10 18-20" stroke="#161a24" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="tag">投稿爆料</span>
+          </div>
+          <div class="body">
+            <h3>截图类爆料集中出现</h3>
+            <p>群聊截图被反复转发，原始出处难以确认。浏览时先分辨是否为同一张图的不同裁剪版本。</p>
+            <div class="meta"><span>来源类型：网友投稿</span><span class="heat">热度 高</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="讨论" data-key="讨论 话题 大赛 吃瓜">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="320" height="180" fill="#e9eef3"/>
+              <rect x="50" y="40" width="96" height="56" rx="12" fill="#ffffff" stroke="#d4dde6"/>
+              <rect x="174" y="76" width="96" height="56" rx="12" fill="#161a24"/>
+              <rect x="66" y="56" width="56" height="6" rx="3" fill="#e8483f"/>
+              <rect x="66" y="70" width="40" height="6" rx="3" fill="#d4dde6"/>
+              <rect x="190" y="92" width="56" height="6" rx="3" fill="#f2b23c"/>
+              <rect x="190" y="106" width="40" height="6" rx="3" fill="#4a5468"/>
+            </svg>
+            <span class="tag">话题讨论</span>
+          </div>
+          <div class="body">
+            <h3>吃瓜大赛话题讨论升温</h3>
+            <p>围绕吃瓜大赛的讨论帖增多，观点分歧明显。多数讨论停留在转述层面，缺少一手材料。</p>
+            <div class="meta"><span>来源类型：公开讨论</span><span class="heat">热度 中高</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="投稿" data-key="旧料 重提 翻出 投稿">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="320" height="180" fill="#efeaf3"/>
+              <rect x="86" y="30" width="90" height="112" rx="8" fill="#fff" stroke="#ddd4e6"/>
+              <rect x="100" y="48" width="60" height="6" rx="3" fill="#8e6fb0"/>
+              <rect x="100" y="64" width="46" height="6" rx="3" fill="#ddd4e6"/>
+              <rect x="100" y="78" width="60" height="6" rx="3" fill="#ddd4e6"/>
+              <path d="M214 96a26 26 0 1 0 18-25" stroke="#e8483f" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <path d="M232 58l2 16-16-3z" fill="#e8483f"/>
+            </svg>
+            <span class="tag">投稿爆料</span>
+          </div>
+          <div class="body">
+            <h3>旧爆料被重新翻出</h3>
+            <p>过往瓜点随新讨论再次出现，常被当作新料传播。核对时间线是分辨新旧的关键一步。</p>
+            <div class="meta"><span>来源类型：历史条目</span><span class="heat">热度 中</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="澄清" data-key="澄清 说法 不一 回应">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="320" height="180" fill="#e8f0ec"/>
+              <circle cx="160" cy="90" r="48" fill="#ffffff" stroke="#cfe0d7"/>
+              <path d="M144 90l11 11 22-24" stroke="#2f8f66" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="42" y="126" width="60" height="7" rx="3.5" fill="#cfe0d7"/>
+              <rect x="218" y="46" width="60" height="7" rx="3.5" fill="#cfe0d7"/>
+            </svg>
+            <span class="tag">后续澄清</span>
+          </div>
+          <div class="body">
+            <h3>多方说法出现分歧</h3>
+            <p>同一瓜点出现不同版本描述，部分当事人给出说明。以可核实的信息为准，不急于下结论。</p>
+            <div class="meta"><span>来源类型：后续说明</span><span class="heat">热度 中</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="讨论" data-key="评论 区 争议 讨论">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="320" height="180" fill="#f5efdf"/>
+              <rect x="48" y="44" width="150" height="12" rx="6" fill="#e8483f"/>
+              <rect x="48" y="68" width="220" height="9" rx="4.5" fill="#ded5c2"/>
+              <rect x="48" y="88" width="196" height="9" rx="4.5" fill="#ded5c2"/>
+              <rect x="48" y="108" width="120" height="9" rx="4.5" fill="#ded5c2"/>
+              <circle cx="252" cy="126" r="20" fill="#f2b23c"/>
+            </svg>
+            <span class="tag">话题讨论</span>
+          </div>
+          <div class="body">
+            <h3>评论区争议持续</h3>
+            <p>围绕瓜点真实性，评论区形成两派意见。讨论热度高，但缺少可交叉验证的细节。</p>
+            <div class="meta"><span>来源类型：公开讨论</span><span class="heat">热度 高</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="投稿" data-key="私信 投稿 匿名 线索">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="320" height="180" fill="#e6eaf2"/>
+              <rect x="76" y="46" width="168" height="88" rx="10" fill="#ffffff" stroke="#d3dae6"/>
+              <path d="M76 58l84 52 84-52" stroke="#e8483f" stroke-width="6" fill="none" stroke-linejoin="round"/>
+              <circle cx="252" cy="58" r="14" fill="#f2b23c"/>
+            </svg>
+            <span class="tag">投稿爆料</span>
+          </div>
+          <div class="body">
+            <h3>匿名投稿线索进入视野</h3>
+            <p>部分线索以匿名投稿形式出现，内容完整度参差。投稿未经核实前，仅作为线索参考。</p>
+            <div class="meta"><span>来源类型：匿名投稿</span><span class="heat">热度 中</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度观察 -->
+  <section class="deep" id="deep">
+    <div class="wrap deep-grid">
+      <article>
+        <p class="sub">爆料观察</p>
+        <h2>吃瓜之前，先把脉络理清</h2>
+        <p><strong>91大赛吃瓜爆料</strong>的内容大多来自网友转发与讨论，信息在传播中容易走样。同一件事经过多次转述，细节会被放大或删减，最后留下的往往只是情绪化的结论。</p>
+        <p>浏览瓜点时，可以先看时间：最早出现的时间点在哪，后续是否有更新。再看来源：是截图、文字转述，还是当事人说明。截图类内容尤其需要留意裁剪痕迹，同一张图的不同版本常常被拼成不同的故事。</p>
+        <p>吃瓜大赛相关话题之所以热度高，一部分原因在于参与门槛低，任何人都能转述一段见闻。这也意味着讨论中混杂着大量未经验证的说法。<strong>91大赛吃瓜爆料</strong>把这些说法按热度与来源类型归拢，但不替读者下判断，事实与传闻需要自行区分。</p>
+        <p>对于已经出现澄清的条目，页面会标注后续说明。遇到多方说法不一致时，比较稳妥的做法是暂缓转发，等更多可核实的信息出现。热度高不等于事实成立，这一点在吃瓜场景里尤其重要。</p>
+      </article>
+      <aside class="rules">
+        <h3>浏览瓜点的四个动作</h3>
+        <ul>
+          <li>先确认瓜点最早出现的时间，判断是新料还是旧料重提。</li>
+          <li>区分截图、转述与当事人说明三类来源，可信度并不相同。</li>
+          <li>同一瓜点出现多个版本时，横向比对细节差异。</li>
+          <li>看到澄清或后续说明后，回看原条目是否仍然成立。</li>
+        </ul>
+        <p class="note">以上为浏览习惯建议，不构成对任何具体瓜点真实性的认定。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 热度榜单 -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>热度榜单 <span>· 讨论靠前</span></h2>
+          <p>按当前讨论活跃度排列的瓜点条目，热度会随讨论变化，榜单仅反映编辑时的关注情况。</p>
+        </div>
+      </div>
+      <div class="list-zone">
+        <div class="rank-list">
+          <div class="rank-item">
+            <span class="rank-num">01</span>
+            <div class="rank-body">
+              <h4>群聊截图类爆料</h4>
+              <p>转发量最大，原始出处待确认，多个版本并存。</p>
+            </div>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">02</span>
+            <div class="rank-body">
+              <h4>吃瓜大赛话题讨论</h4>
+              <p>讨论帖数量增长明显，观点分歧集中在细节真实性。</p>
+            </div>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">03</span>
+            <div class="rank-body">
+              <h4>旧料重提条目</h4>
+              <p>过往瓜点被重新解读，时间线容易混淆。</p>
+            </div>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">04</span>
+            <div class="rank-body">
+              <h4>匿名投稿线索</h4>
+              <p>线索完整度不一，需与公开信息交叉比对。</p>
+            </div>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">05</span>
+            <div class="rank-body">
+              <h4>后续澄清与说明</h4>
+              <p>部分条目出现说明，影响原有讨论走向。</p>
+            </div>
+          </div>
+        </div>
+        <aside class="side-box">
+          <h3>线索投递入口</h3>
+          <p>如果你手上有更完整的材料，可以通过投稿入口提交。请尽量附上时间与出处，便于核对。</p>
+          <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载投稿模板</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见疑问 -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>常见疑问</h2>
+          <p>关于 91大赛吃瓜爆料的几个高频问题，集中说明页面定位与内容处理方式。</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="qa">
+          <h4>91大赛吃瓜爆料的瓜点来源是什么？</h4>
+          <p>以网友投稿、公开讨论与转发内容为主，页面按来源类型标注，未核实的线索会明确写出状态。</p>
+        </div>
+        <div class="qa">
+          <h4>为什么同一瓜点有多个版本？</h4>
+          <p>信息在多次转述中会被改写，截图也可能被裁剪。页面会把不同版本并列呈现，方便对照差异。</p>
+        </div>
+        <div class="qa">
+          <h4>热度高是否代表情况属实？</h4>
+          <p>不代表。热度只反映讨论活跃程度，真实性仍需结合来源与后续说明判断。</p>
+        </div>
+        <div class="qa">
+          <h4>如何跟进后续更新？</h4>
+          <p>可先浏览热门瓜点与热度榜单，出现澄清或新说明时，相关条目会补充后续状态。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#2d3547"/>
+          <path d="M32 11c3 8 8 12 16 14-8 2-13 6-16 14-3-8-8-12-16-14 8-2 13-6 16-14z" fill="#e8483f"/>
+          <circle cx="32" cy="49" r="6" fill="#f2b23c"/>
+        </svg>
+        <span>91大赛吃瓜爆料</span>
+      </div>
+      <nav class="foot-links" aria-label="页尾导航">
+        <a href="#hot">热门瓜点</a>
+        <a href="#deep">爆料观察</a>
+        <a href="#rank">热度榜单</a>
+        <a href="#faq">常见疑问</a>
+      </nav>
+    </div>
+    <p class="foot-note"><strong>91大赛吃瓜爆料</strong>是吃瓜热点的浏览入口，收录内容来自网友投稿与公开讨论，页面标注的来源与热度仅反映编辑时的整理情况。<br>对未经核实的线索，请保持审慎，不传播来源不明的截图与个人信息。</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle=document.querySelector('.nav-toggle');
+    var nav=document.getElementById('mainnav');
+    if(toggle&&nav){
+      toggle.addEventListener('click',function(){
+        var open=nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded',open?'true':'false');
+      });
+      nav.addEventListener('click',function(e){
+        if(e.target.tagName==='A'&&window.innerWidth<=640){
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        }
+      });
+    }
+
+    var input=document.getElementById('guakey');
+    var chips=document.querySelectorAll('.chip');
+    var cards=document.querySelectorAll('#cardGrid .card');
+    var empty=document.getElementById('emptyTip');
+    var cat='all';
+
+    function apply(){
+      var kw=(input.value||'').trim().toLowerCase();
+      var visible=0;
+      cards.forEach(function(c){
+        var okCat=(cat==='all')||(c.getAttribute('data-cat')===cat);
+        var key=(c.getAttribute('data-key')||'')+' '+(c.textContent||'').toLowerCase();
+        var okKw=!kw||key.indexOf(kw)>-1;
+        var show=okCat&&okKw;
+        c.style.display=show?'':'none';
+        if(show)visible++;
+      });
+      empty.classList.toggle('show',visible===0);
+    }
+
+    chips.forEach(function(ch){
+      ch.addEventListener('click',function(){
+        chips.forEach(function(x){x.classList.remove('active')});
+        ch.classList.add('active');
+        cat=ch.getAttribute('data-cat');
+        apply();
+      });
+    });
+    input.addEventListener('input',apply);
+  })();
+</script>
+</body>
+  </html>
